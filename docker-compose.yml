@@ -2,7 +2,7 @@ version: '3'
 services:
   nginx_proxy:
     container_name: nginx_proxy
-    image: nginx:latest
+    image: nginx:alpine
     ports:
       - "80:80"
       - "443:443"
@@ -18,10 +18,11 @@ services:
 
   petclinic:
     container_name: petclinic  
-    build: .
+    image: multi_pet:latest
+#    build: .
     environment:
-      - MYSQL_ROOT_PASSWORD=
-      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_ROOT_PASSWORD=pet
+#      - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - MYSQL_USER=petclinic
       - MYSQL_PASSWORD=petclinic
       - MYSQL_DATABASE=petclinic
@@ -35,10 +36,8 @@ services:
     container_name: mysql
     image: mysql:5.7
     environment:
-      - MYSQL_ROOT_PASSWORD=
-      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_ROOT_PASSWORD=pet
+ #     - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - MYSQL_USER=petclinic
       - MYSQL_PASSWORD=petclinic
       - MYSQL_DATABASE=petclinic
-#    volumes:
-#      - "./conf.d:/etc/mysql/conf.d:ro"

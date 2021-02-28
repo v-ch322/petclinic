@@ -1,7 +1,12 @@
+FROM maven:3.6-jdk-11-slim as BUILD
+COPY . /src
+WORKDIR /src
+RUN mvn install -DskipTests
+
 FROM openjdk:8-jdk-alpine
-WORKDIR /usr/pet
-# this was taken from the container
-#ENV JAVA_HOME="/usr/lib/jvm/java-1.8-openjdk"
-COPY . /usr/pet
-RUN ./mvnw package -e -Dmaven.test.skip
-CMD java -jar target/spring-petclinic-2.4.2.jar --spring.profiles.active=mysql
+EXPOSE 8080
+WORKDIR /app
+ARG JAR=spring-petclinic-2.4.2.jar
+
+COPY --from=BUILD /src/target/$JAR /app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
