@@ -1,0 +1,6 @@
+[nserver]
+server1 ansible_host=34.243.41.54 ansible_ssh_private_key_file=/home/victor/.ssh/vlc.pem ansible_ssh_user=ubuntu
+
+[nserver:vars]
+ansible_python_interpreter=/usr/bin/python3
+
