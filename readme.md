@@ -19,7 +19,7 @@ You can then access Petclinic here: https://localhost.
 
 The solution for Ansible is placed in 'Ansible_Petclinic/' directory.
 AWS t2.micro should be used.
-File 'myhost' should be edited: path to ssh key, IP address of the terget host.
+File 'myhost' should be edited: path to ssh key, IP address of the target host.
 
 Execution with the command:
 ansible-playbook -i myhost Java-Petclinic.yml
