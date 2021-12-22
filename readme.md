@@ -23,4 +23,4 @@ File 'myhost' should be edited: path to ssh key, IP address of the target host.
 
 Execution with the command:
 ansible-playbook -i myhost Java-Petclinic.yml
- 
+Result is seen in the instance, port 8080.
