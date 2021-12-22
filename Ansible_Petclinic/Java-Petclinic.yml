@@ -47,9 +47,9 @@
       apt:
         name: daemonize
         state: latest
-
+# changed Dec21 2021, the compilation yields spring-petclinic-2.6.0-SNAPSHOT.jar
     - name: Running the daemonized Java application, requires the absolute pathes for all
-      command: "daemonize /usr/bin/java -jar /home/ubuntu/spring-petclinic/target/spring-petclinic-2.4.5.jar"
+      command: "daemonize /usr/bin/java -jar /home/ubuntu/spring-petclinic/target/spring-petclinic-2.6.0-SNAPSHOT.jar"
       args:
         chdir: /home/ubuntu/spring-petclinic/
 
@@ -57,10 +57,3 @@
 #     They should be placed immediately after chdir with the 'args' indentation
 #     async: 25920000
 #     poll: 0
-
-
-
-
-
-
-
