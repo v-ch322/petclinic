@@ -22,5 +22,6 @@ AWS t2.micro should be used.
 File 'myhost' should be edited: path to ssh key, IP address of the target host.
 
 Execution with the command:
-ansible-playbook -i myhost Java-Petclinic.yml
+ansible-playbook -i myhost Java-Petclinic.yml.
 Result is seen in the instance, port 8080.
+(Name of the resulting .jar file can change from time to time dependently on soft version changes).
